@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Chat{% endblock %}
+{% block content %}
+<!-- 🎯 BANNIÈRE -->
+<div class="banner-image-only">
+  <img src="{{ url_for('static', filename='img/War40k_Banner.jpg') }}" alt="Mistral Banner">
+</div>
+
+<h1>Test avec un LLM simple, mistral, en rajoutant du contexte Warhammer 40k (lore)</h1>
+<form method="post">
+    <textarea name="prompt" placeholder="Pose ta question..."></textarea>
+    <input type="submit" value="Envoyer">
+</form>
+{% if response %}
+<div class="response">{{ response }}</div>
+{% endif %}
+{% endblock %}

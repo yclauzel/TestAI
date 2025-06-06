@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Chat{% endblock %}
+{% block content %}
+<h1>Test avec un LLM simple, mistral, sans contexte</h1>
+<form method="post">
+    <textarea name="prompt" placeholder="Pose ta question..."></textarea>
+    <input type="submit" value="Envoyer">
+</form>
+{% if response %}
+<div class="response">{{ response }}</div>
+{% endif %}
+{% endblock %}

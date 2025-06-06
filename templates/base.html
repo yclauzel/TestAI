@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Mon App{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li class="{{ 'active' if active == 'home' else '' }}">
+                <a href="/">Accueil</a>
+            </li>
+            <li class="{{ 'active' if active == 'test01' else '' }}">
+                <a href="/test01">Test01</a>
+            </li>
+            <li class="{{ 'active' if active == 'test02' else '' }}">
+                <a href="/test02">Test02</a>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
